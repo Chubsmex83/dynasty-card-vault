@@ -92,13 +92,13 @@ export function BackgroundFX() {
       />
 
       {/* Brand logo watermark */}
-      <div className="absolute left-1/2 top-1/2 w-[min(92vw,880px)] -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute left-1/2 top-1/2 w-[min(94vw,1040px)] -translate-x-1/2 -translate-y-1/2">
         <Image
           src="/logo.png"
           alt=""
-          width={880}
-          height={880}
-          className="h-auto w-full select-none opacity-[0.10] mix-blend-screen"
+          width={1040}
+          height={1040}
+          className="h-auto w-full select-none opacity-[0.24] mix-blend-screen"
         />
       </div>
     </div>
