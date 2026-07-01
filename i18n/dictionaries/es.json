@@ -31,14 +31,14 @@
   },
   "home": {
     "heroKicker": "Colección curada y auténtica",
-    "heroTitle": "El bóveda definitiva para coleccionistas de cartas",
+    "heroTitle": "La bóveda definitiva para coleccionistas de cartas",
     "heroSubtitle": "Cartas individuales certificadas, cajas selladas y memorabilia exclusiva, verificadas por expertos y enviadas con seguro completo.",
     "heroCta": "Explorar la tienda",
     "featured": "Destacadas",
     "newArrivals": "Recién llegadas",
     "mostValuable": "Más valiosas",
-    "breaksTitle": "Live Breaks en vivo",
-    "breaksSubtitle": "Únete a nuestras roturas transmitidas en directo y consigue tu spot antes de que se agoten.",
+    "breaksTitle": "Breaks en vivo",
+    "breaksSubtitle": "Únete a nuestros breaks transmitidos en vivo y asegura tu spot antes de que se agoten.",
     "categoriesTitle": "Explora por categoría",
     "whyTitle": "Por qué elegir Dynasty Card Vault",
     "faqTitle": "Preguntas frecuentes"
@@ -129,7 +129,7 @@
     }
   ],
   "footer": {
-    "tagline": "El bóveda de los coleccionistas serios.",
+    "tagline": "La bóveda de los coleccionistas serios.",
     "business": "Dynasty Card Vault es un marketplace especializado en cartas coleccionables deportivas y TCG, cajas selladas y memorabilia autenticada, dedicado a coleccionistas que buscan calidad, transparencia y seguridad en cada transacción.",
     "rights": "Todos los derechos reservados.",
     "explore": "Explorar",
