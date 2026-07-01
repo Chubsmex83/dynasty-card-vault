@@ -22,7 +22,8 @@ export function CursorGlow() {
   useEffect(() => {
     if (reducedMotion) return
     if (typeof window === 'undefined') return
-    if (!window.matchMedia('(pointer: fine)').matches) return
+    // any-pointer (not pointer) so a mouse still counts on touchscreen laptops
+    if (!window.matchMedia('(any-pointer: fine)').matches) return
 
     setEnabled(true)
 
