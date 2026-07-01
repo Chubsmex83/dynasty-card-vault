@@ -3,16 +3,21 @@
 import { useEffect, useState } from 'react'
 import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
 
-const GLOW_SIZE = 500
+const GLOW_SIZE = 600
 
+/**
+ * Electric-blue glow that follows the cursor, rendered above content with a
+ * `screen` blend so it only lightens (adds a moving blue sheen) and never
+ * hurts text legibility. Disabled on touch devices and under reduced motion.
+ */
 export function CursorGlow() {
   const reducedMotion = useReducedMotion()
   const [enabled, setEnabled] = useState(false)
 
   const x = useMotionValue(-GLOW_SIZE)
   const y = useMotionValue(-GLOW_SIZE)
-  const springX = useSpring(x, { stiffness: 120, damping: 30, mass: 0.6 })
-  const springY = useSpring(y, { stiffness: 120, damping: 30, mass: 0.6 })
+  const springX = useSpring(x, { stiffness: 140, damping: 26, mass: 0.5 })
+  const springY = useSpring(y, { stiffness: 140, damping: 26, mass: 0.5 })
 
   useEffect(() => {
     if (reducedMotion) return
@@ -42,9 +47,9 @@ export function CursorGlow() {
         x: springX,
         y: springY,
         background:
-          'radial-gradient(circle, color-mix(in srgb, var(--gold) 100%, transparent) 0%, transparent 60%)',
-        opacity: 0.06,
-        filter: 'blur(40px)',
+          'radial-gradient(circle, rgba(61,231,255,0.40) 0%, rgba(76,134,255,0.18) 35%, transparent 65%)',
+        mixBlendMode: 'screen',
+        filter: 'blur(30px)',
       }}
     />
   )
