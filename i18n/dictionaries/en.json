@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "brand": "Dynasty Card Vault",
+    "cards": "Cards",
+    "singles": "Singles",
+    "sealed": "Sealed Boxes",
+    "memorabilia": "Memorabilia",
+    "breaks": "Live Breaks",
+    "shop": "Shop",
+    "cart": "Cart",
+    "searchPlaceholder": "Search cards, players, sets..."
+  },
+  "common": {
+    "addToCart": "Add to cart",
+    "soldOut": "Sold out",
+    "preorder": "Preorder",
+    "inStock": "In stock",
+    "viewDetails": "View details",
+    "from": "From",
+    "results": "results",
+    "filters": "Filters",
+    "clearFilters": "Clear filters",
+    "sort": "Sort",
+    "price": "Price",
+    "grade": "Grade",
+    "sport": "Sport",
+    "availability": "Availability",
+    "all": "All",
+    "loading": "Loading...",
+    "empty": "No results found"
+  },
+  "home": {
+    "heroKicker": "Curated and authenticated collection",
+    "heroTitle": "The ultimate vault for card collectors",
+    "heroSubtitle": "Certified singles, sealed boxes, and exclusive memorabilia, verified by experts and shipped fully insured.",
+    "heroCta": "Shop the vault",
+    "featured": "Featured",
+    "newArrivals": "New arrivals",
+    "mostValuable": "Most valuable",
+    "breaksTitle": "Live Breaks",
+    "breaksSubtitle": "Join our live-streamed breaks and lock in your spot before they sell out.",
+    "categoriesTitle": "Shop by category",
+    "whyTitle": "Why Dynasty Card Vault",
+    "faqTitle": "Frequently asked questions"
+  },
+  "sports": {
+    "nba": "NBA",
+    "mlb": "MLB",
+    "nfl": "NFL",
+    "nhl": "NHL",
+    "pokemon": "Pokémon",
+    "soccer": "Soccer",
+    "f1": "Formula 1",
+    "ufc": "UFC",
+    "onepiece": "One Piece",
+    "mtg": "Magic: The Gathering"
+  },
+  "categories": {
+    "single": "Single Cards",
+    "sealed": "Sealed Boxes",
+    "memorabilia": "Memorabilia",
+    "singleDesc": "Certified and raw cards from the most sought-after players and sets.",
+    "sealedDesc": "Factory-sealed boxes, blasters, and hobby boxes, ready to open or hold.",
+    "memorabiliaDesc": "Signed and authenticated pieces — jerseys, balls, and one-of-a-kind items."
+  },
+  "product": {
+    "grading": "Grading",
+    "condition": "Condition",
+    "related": "Related products",
+    "description": "Description",
+    "addedToCart": "Added to cart"
+  },
+  "breaks": {
+    "upcoming": "Upcoming",
+    "live": "Live",
+    "completed": "Completed",
+    "spots": "Spots",
+    "spotsAvailable": "spots available",
+    "joinBreak": "Join break",
+    "boxes": "Boxes",
+    "starts": "Starts"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty",
+    "emptyCta": "Browse the shop",
+    "item": "Item",
+    "quantity": "Quantity",
+    "total": "Total",
+    "checkout": "Checkout",
+    "checkoutSoon": "Checkout will be available soon",
+    "remove": "Remove",
+    "continueShopping": "Continue shopping"
+  },
+  "why": [
+    {
+      "title": "Guaranteed authenticity",
+      "body": "Every card and memorabilia piece goes through a rigorous verification process before joining our catalog."
+    },
+    {
+      "title": "Professional grading",
+      "body": "We work with PSA, BGS, and SGC to certify the condition and real value of every card."
+    },
+    {
+      "title": "Secure, insured shipping",
+      "body": "We pack with rigid materials and full insurance so your collection arrives intact."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which grading companies do you use?",
+      "a": "We work with PSA, BGS, and SGC, the three most recognized grading houses in the industry, ensuring consistent authentication and grading standards."
+    },
+    {
+      "q": "How do you guarantee card authenticity?",
+      "a": "All singles and memorabilia are verified by our expert team and, when applicable, include third-party certification with a traceable serial number."
+    },
+    {
+      "q": "How does shipping work?",
+      "a": "We ship in rigid, bend-proof packaging with insurance included on every order; delivery times vary by destination and the method selected at checkout."
+    },
+    {
+      "q": "What is a live break and how do I join?",
+      "a": "A live break is a live-streamed event where sealed boxes are opened and each participant receives the cards for their assigned spot or team; you can reserve your spot from the Live Breaks section."
+    },
+    {
+      "q": "What payment methods do you accept?",
+      "a": "Checkout is coming soon; for now you can browse the full catalog and save items to your cart."
+    }
+  ],
+  "footer": {
+    "tagline": "The vault for serious collectors.",
+    "business": "Dynasty Card Vault is a marketplace specializing in sports and TCG collectible cards, sealed boxes, and authenticated memorabilia, built for collectors who demand quality, transparency, and security in every transaction.",
+    "rights": "All rights reserved.",
+    "explore": "Explore",
+    "categories": "Categories",
+    "company": "Company"
+  }
+}
