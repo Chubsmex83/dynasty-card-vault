@@ -1,36 +1,90 @@
-import Link from 'next/link';
-import { isLocale } from '@/i18n/config';
-import { getDictionary } from '@/i18n/getDictionary';
-import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import { isLocale, type Locale } from '@/i18n/config'
+import { getDictionary } from '@/i18n/getDictionary'
+import {
+  getFeatured,
+  getNewArrivals,
+  getMostValuable,
+  getBreaks,
+} from '@/lib/data'
+import { pageMetadata } from '@/lib/seo'
+import { Hero } from '@/components/home/Hero'
+import { SectionRow } from '@/components/home/SectionRow'
+import { BreaksStrip } from '@/components/home/BreaksStrip'
+import { CategoryTiles } from '@/components/home/CategoryTiles'
+import { ValueProps } from '@/components/home/ValueProps'
+import { FaqSection } from '@/components/home/FaqSection'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  if (!isLocale(locale)) return {}
+  const dict = await getDictionary(locale)
+  return pageMetadata({
+    title: dict.home.heroTitle,
+    description: dict.home.heroSubtitle,
+    path: '',
+    locale,
+  })
+}
 
 export default async function LocaleHomePage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string }>
 }) {
-  const { locale } = await params;
+  const { locale } = await params
 
   if (!isLocale(locale)) {
-    notFound();
+    notFound()
   }
 
-  const dict = await getDictionary(locale);
+  const typedLocale = locale as Locale
+  const dict = await getDictionary(typedLocale)
+
+  const featured = getFeatured().slice(0, 8)
+  const newArrivals = getNewArrivals().slice(0, 8)
+  const mostValuable = getMostValuable()
+  const breaks = getBreaks()
+  const showcase = getFeatured().slice(0, 5)
 
   return (
-    <main className="flex min-h-[70vh] flex-col items-center justify-center gap-6 bg-bg px-6 text-center text-ink">
-      <p className="text-sm uppercase tracking-[0.2em] text-gold">
-        {dict.home.heroKicker}
-      </p>
-      <h1 className="max-w-2xl text-4xl font-semibold text-ink sm:text-5xl">
-        {dict.home.heroTitle}
-      </h1>
-      <p className="max-w-xl text-base text-muted">{dict.home.heroSubtitle}</p>
-      <Link
-        href={`/${locale}/shop`}
-        className="rounded-full bg-gold px-6 py-3 text-sm font-medium text-bg transition-colors hover:bg-gold-soft"
-      >
-        {dict.home.heroCta}
-      </Link>
-    </main>
-  );
+    <>
+      <Hero locale={typedLocale} dict={dict} showcase={showcase} />
+
+      <SectionRow
+        title={dict.home.featured}
+        products={featured}
+        locale={typedLocale}
+        dict={dict}
+        viewAllHref={`/${typedLocale}/shop`}
+      />
+
+      <SectionRow
+        title={dict.home.newArrivals}
+        products={newArrivals}
+        locale={typedLocale}
+        dict={dict}
+      />
+
+      <BreaksStrip breaks={breaks} locale={typedLocale} dict={dict} />
+
+      <SectionRow
+        title={dict.home.mostValuable}
+        products={mostValuable}
+        locale={typedLocale}
+        dict={dict}
+      />
+
+      <CategoryTiles locale={typedLocale} dict={dict} />
+
+      <ValueProps dict={dict} />
+
+      <FaqSection dict={dict} />
+    </>
+  )
 }
