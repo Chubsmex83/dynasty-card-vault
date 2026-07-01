@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dynasty Card Vault
 
-## Getting Started
+Premium bilingual (ES/EN) e-commerce marketplace for collectible sports & TCG
+cards, sealed boxes, memorabilia, and live-break spots.
 
-First, run the development server:
+Built with **Next.js 15 (App Router) · TypeScript · Tailwind CSS v4 · Framer
+Motion · Zustand**.
+
+## Features
+
+- **Marketplace** with a filter sidebar (category, sport, grade, availability,
+  price, sort) and a prominent live-autocomplete search.
+- **Product detail** pages with holographic card-art gallery, grading info, and
+  Schema.org Product/Offer structured data.
+- **Live Breaks** section with purchasable per-team/division spots.
+- **Cart** (client-side, persisted to `localStorage`) — checkout is intentionally
+  disabled until a payments backend is connected.
+- **Bilingual** Spanish (default) / English via an `[locale]` route segment and
+  JSON dictionaries.
+- **Signature design**: dark premium vault aesthetic with a cursor-reactive
+  holographic foil tilt on cards and a graded-slab card frame.
+- **SEO / GEO**: per-page metadata, Open Graph + Twitter cards, JSON-LD
+  (Organization, WebSite + SearchAction, Product, Offer, BreadcrumbList, FAQPage),
+  `sitemap.xml`, `robots.txt`, semantic HTML, and concrete FAQ content.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000  (redirects to /es)
+npm run build    # production build
+npm run test     # vitest unit tests (data layer, search, formatting, cart)
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> **Windows note:** run `next` commands from a path whose `Desktop` casing
+> matches the real filesystem casing, otherwise webpack may load two copies of
+> React and the build fails on internal error pages.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/[locale]/        Localized routes: home, shop, product/[slug], breaks, cart
+components/           ui/ · motion/ · product/ · search/ · layout/ · breaks/ · cart/ · home/
+lib/data/            Typed mock catalog + accessor functions (swap for a real API/CMS)
+lib/cart/            Zustand cart store
+lib/seo.ts           Metadata + JSON-LD builders
+i18n/                Locale config + es/en dictionaries
+```
 
-## Learn More
+## Data layer
 
-To learn more about Next.js, take a look at the following resources:
+All catalog reads go through `lib/data/` accessors (`getProducts`, `search`,
+`getBreaks`, …). The catalog in `lib/data/products.ts` is mock data with
+`images: []`, so a generated `<CardArt>` placeholder is rendered. Replace with a
+real API/CMS or populate `images` with real photos — no UI changes required.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Copy `.env.example` to `.env.local` and set:
 
-## Deploy on Vercel
+```
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Used for canonical URLs, `sitemap.xml`, and JSON-LD. Defaults to the Vercel URL.
