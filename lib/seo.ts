@@ -17,7 +17,7 @@ export function orgJsonLd(): object {
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
-    logo: `${SITE_URL}/icon.png`,
+    logo: `${SITE_URL}/logo.png`,
   }
 }
 
@@ -99,7 +99,8 @@ export function pageMetadata(opts: {
   locale: Locale
   images?: string[]
 }): Metadata {
-  const { title, description, path, locale, images } = opts
+  const { title, description, path, locale } = opts
+  const images = opts.images ?? ['/logo.png']
   const canonical = `${SITE_URL}/${locale}${path}`
   const ogLocale = locale === 'es' ? 'es_ES' : 'en_US'
 

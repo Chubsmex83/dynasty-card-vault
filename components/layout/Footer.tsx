@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/getDictionary'
 
@@ -27,15 +28,14 @@ export function Footer({
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand + business paragraph */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2">
-              <span
-                aria-hidden="true"
-                className="holo-border grid h-8 w-8 place-items-center rounded-lg bg-panel-2"
-              >
-                <span className="holo-text font-display text-base font-bold leading-none">
-                  D
-                </span>
-              </span>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="Dynasty Card Vault"
+                width={48}
+                height={48}
+                className="h-12 w-12 shrink-0 rounded-lg object-contain"
+              />
               <span className="font-display text-lg font-semibold tracking-tight text-ink">
                 {dict.nav.brand}
               </span>

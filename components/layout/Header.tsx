@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { SearchBar } from '@/components/search/SearchBar'
 import { CursorGlow } from '@/components/motion/CursorGlow'
 import { LocaleSwitcher } from '@/components/layout/LocaleSwitcher'
@@ -35,14 +36,14 @@ export function Header({
             className="flex shrink-0 items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
             aria-label={dict.nav.brand}
           >
-            <span
-              aria-hidden="true"
-              className="holo-border grid h-8 w-8 place-items-center rounded-lg bg-panel-2"
-            >
-              <span className="holo-text font-display text-base font-bold leading-none">
-                D
-              </span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt=""
+              width={44}
+              height={44}
+              priority
+              className="h-9 w-9 shrink-0 rounded-lg object-contain lg:h-11 lg:w-11"
+            />
             <span className="hidden font-display text-base font-semibold tracking-tight text-ink sm:inline lg:text-lg">
               {dict.nav.brand}
             </span>
