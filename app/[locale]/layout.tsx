@@ -4,6 +4,7 @@ import { isLocale, locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { BackgroundFX } from '@/components/motion/BackgroundFX';
 import { JsonLd, orgJsonLd, websiteJsonLd } from '@/lib/seo';
 
 export function generateStaticParams() {
@@ -45,6 +46,7 @@ export default async function LocaleLayout({
         }}
       />
       <JsonLd data={[orgJsonLd(), websiteJsonLd(typedLocale)]} />
+      <BackgroundFX />
       <Header locale={typedLocale} dict={dict} />
       <main>{children}</main>
       <Footer locale={typedLocale} dict={dict} />

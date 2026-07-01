@@ -93,6 +93,49 @@ body {
   }
 }
 
+/* Background aurora blobs (electric blue, drifting) */
+.bg-aurora {
+  position: absolute;
+  width: min(70vw, 720px);
+  height: min(70vw, 720px);
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+.bg-aurora-a {
+  animation: drift-a 26s ease-in-out infinite;
+}
+.bg-aurora-b {
+  animation: drift-b 32s ease-in-out infinite;
+}
+
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(12vw, 8vh, 0) scale(1.15);
+  }
+  66% {
+    transform: translate3d(4vw, 18vh, 0) scale(0.95);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(-14vw, -10vh, 0) scale(1.1);
+  }
+  66% {
+    transform: translate3d(-6vw, -4vh, 0) scale(0.9);
+  }
+}
+
 /* Respect reduced motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,
