@@ -96,10 +96,10 @@ body {
 /* Background aurora blobs (electric blue, drifting) */
 .bg-aurora {
   position: absolute;
-  width: min(70vw, 720px);
-  height: min(70vw, 720px);
+  width: min(78vw, 820px);
+  height: min(78vw, 820px);
   border-radius: 9999px;
-  filter: blur(90px);
+  filter: blur(80px);
   will-change: transform;
 }
 

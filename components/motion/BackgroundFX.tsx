@@ -63,31 +63,31 @@ export function BackgroundFX() {
       <div
         className={`bg-aurora ${reduce ? '' : 'bg-aurora-a'}`}
         style={{
-          top: '-15%',
-          left: '-10%',
+          top: '2%',
+          left: '4%',
           background:
-            'radial-gradient(circle, rgba(61,231,255,0.22), transparent 62%)',
+            'radial-gradient(circle, rgba(61,231,255,0.42), transparent 64%)',
         }}
       />
       <div
         className={`bg-aurora ${reduce ? '' : 'bg-aurora-b'}`}
         style={{
-          bottom: '-20%',
-          right: '-12%',
+          bottom: '2%',
+          right: '2%',
           background:
-            'radial-gradient(circle, rgba(76,134,255,0.20), transparent 62%)',
+            'radial-gradient(circle, rgba(76,134,255,0.40), transparent 64%)',
         }}
       />
 
       {/* Cursor-following electric-blue glow */}
       <div
         ref={glowRef}
-        className="absolute h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="absolute h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
           top: '40%',
           left: '50%',
           background:
-            'radial-gradient(circle, rgba(61,231,255,0.10), transparent 60%)',
+            'radial-gradient(circle, rgba(61,231,255,0.20), transparent 60%)',
         }}
       />
 
