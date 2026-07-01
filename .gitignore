@@ -44,3 +44,5 @@ next-env.d.ts
 # superpowers sdd scratch
 /.superpowers/
 /scaffold_tmp/
+
+.vercel
