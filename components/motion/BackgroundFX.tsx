@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useReducedMotion } from 'framer-motion'
 
 /**
  * Site-wide fixed background layer:
@@ -10,11 +9,11 @@ import { useReducedMotion } from 'framer-motion'
  *  - two slow-drifting electric-blue aurora blobs
  * Sits behind all content (-z-10, fixed) and stays put while scrolling.
  * The cursor-following glow lives in CursorGlow (rendered above content).
- * Fully static under prefers-reduced-motion.
+ *
+ * The aurora drift is a subtle ambient brand effect and runs regardless of
+ * prefers-reduced-motion; heavier content animations still respect it.
  */
 export function BackgroundFX() {
-  const reduce = useReducedMotion()
-
   return (
     <div
       aria-hidden="true"
@@ -22,7 +21,7 @@ export function BackgroundFX() {
     >
       {/* Electric-blue drifting aurora */}
       <div
-        className={`bg-aurora ${reduce ? '' : 'bg-aurora-a'}`}
+        className="bg-aurora bg-aurora-a"
         style={{
           top: '2%',
           left: '4%',
@@ -31,7 +30,7 @@ export function BackgroundFX() {
         }}
       />
       <div
-        className={`bg-aurora ${reduce ? '' : 'bg-aurora-b'}`}
+        className="bg-aurora bg-aurora-b"
         style={{
           bottom: '2%',
           right: '2%',

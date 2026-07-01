@@ -139,6 +139,18 @@ body {
   }
 }
 
+/* Keep the ambient background aurora drifting even under reduced-motion
+   (higher specificity than the global reduce reset below). It's a subtle,
+   non-vestibular brand effect; content animations still stop. */
+@media (prefers-reduced-motion: reduce) {
+  .bg-aurora-a {
+    animation: drift-a 26s ease-in-out infinite !important;
+  }
+  .bg-aurora-b {
+    animation: drift-b 32s ease-in-out infinite !important;
+  }
+}
+
 /* Respect reduced motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,

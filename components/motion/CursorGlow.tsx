@@ -1,17 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 const GLOW_SIZE = 600
 
 /**
  * Electric-blue glow that follows the cursor, rendered above content with a
  * `screen` blend so it only lightens (adds a moving blue sheen) and never
- * hurts text legibility. Disabled on touch devices and under reduced motion.
+ * hurts text legibility. Disabled only on devices with no fine pointer.
+ *
+ * Intentionally NOT gated by prefers-reduced-motion: this is a subtle ambient
+ * brand effect (no large translation/parallax). Heavier content animations
+ * (hero parallax, 3D card tilt, scroll reveals) still respect reduced-motion.
  */
 export function CursorGlow() {
-  const reducedMotion = useReducedMotion()
   const [enabled, setEnabled] = useState(false)
 
   const x = useMotionValue(-GLOW_SIZE)
@@ -20,7 +23,6 @@ export function CursorGlow() {
   const springY = useSpring(y, { stiffness: 140, damping: 26, mass: 0.5 })
 
   useEffect(() => {
-    if (reducedMotion) return
     if (typeof window === 'undefined') return
     // any-pointer (not pointer) so a mouse still counts on touchscreen laptops
     if (!window.matchMedia('(any-pointer: fine)').matches) return
@@ -34,7 +36,7 @@ export function CursorGlow() {
 
     window.addEventListener('pointermove', handleMove)
     return () => window.removeEventListener('pointermove', handleMove)
-  }, [reducedMotion, x, y])
+  }, [x, y])
 
   if (!enabled) return null
 
