@@ -1,7 +1,10 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { isLocale, locales } from '@/i18n/config';
+import { isLocale, locales, type Locale } from '@/i18n/config';
 import { getDictionary } from '@/i18n/getDictionary';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { JsonLd, orgJsonLd, websiteJsonLd } from '@/lib/seo';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -31,7 +34,8 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  await getDictionary(locale);
+  const typedLocale = locale as Locale;
+  const dict = await getDictionary(typedLocale);
 
   return (
     <>
@@ -40,9 +44,10 @@ export default async function LocaleLayout({
           __html: `document.documentElement.lang=${JSON.stringify(locale)}`,
         }}
       />
-      {/* Header */}
-      {children}
-      {/* Footer */}
+      <JsonLd data={[orgJsonLd(), websiteJsonLd(typedLocale)]} />
+      <Header locale={typedLocale} dict={dict} />
+      <main>{children}</main>
+      <Footer locale={typedLocale} dict={dict} />
     </>
   );
 }
