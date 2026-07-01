@@ -25,7 +25,36 @@ export const metadata: Metadata = {
   },
   description:
     "Marketplace premium de cartas coleccionables deportivas y TCG: cartas individuales, cajas selladas, memorabilia y espacios en live breaks.",
-  icons: { icon: "/favicon.ico" },
+  applicationName: "Dynasty Card Vault",
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    apple: "/logo.png",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Dynasty Card Vault",
+    title: "Dynasty Card Vault — Cartas coleccionables premium",
+    description:
+      "Marketplace premium de cartas coleccionables deportivas y TCG: cartas individuales, cajas selladas, memorabilia y espacios en live breaks.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1254,
+        height: 1254,
+        alt: "Dynasty Card Vault",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dynasty Card Vault — Cartas coleccionables premium",
+    description:
+      "Marketplace premium de cartas coleccionables deportivas y TCG.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
