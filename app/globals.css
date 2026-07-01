@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* ---- Design tokens (Dynasty Card Vault) ---- */
+:root {
+  --bg: #0a0b0f;
+  --panel: #12141c;
+  --panel-2: #171a24;
+  --ink: #f5f6fa;
+  --muted: #8a8f9c;
+  --border: #23273300;
+  --gold: #c9a24b;
+  --gold-soft: #e4c579;
+  --holo-1: #3de7ff;
+  --holo-2: #b36bff;
+  --holo-3: #c9a24b;
+  --holo: linear-gradient(115deg, #3de7ff, #b36bff, #c9a24b);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-holo-1: var(--holo-1);
+  --color-holo-2: var(--holo-2);
+  --color-holo-3: var(--holo-3);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --radius-xl2: 1.25rem;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 35%, transparent);
+  color: var(--ink);
+}
+
+/* Utility: holographic text/foil */
+.holo-text {
+  background: var(--holo);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: holo-pan 8s ease-in-out infinite;
+}
+
+.holo-border {
+  position: relative;
+}
+.holo-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--holo);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes holo-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
