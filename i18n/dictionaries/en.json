@@ -39,7 +39,6 @@
     "mostValuable": "Most valuable",
     "breaksTitle": "Live Breaks",
     "breaksSubtitle": "Join our live-streamed breaks and lock in your spot before they sell out.",
-    "categoriesTitle": "Shop by category",
     "whyTitle": "Why Dynasty Card Vault",
     "faqTitle": "Frequently asked questions"
   },
@@ -58,10 +57,7 @@
   "categories": {
     "single": "Single Cards",
     "sealed": "Sealed Boxes",
-    "memorabilia": "Memorabilia",
-    "singleDesc": "Certified and raw cards from the most sought-after players and sets.",
-    "sealedDesc": "Factory-sealed boxes, blasters, and hobby boxes, ready to open or hold.",
-    "memorabiliaDesc": "Signed and authenticated pieces — jerseys, balls, and one-of-a-kind items."
+    "memorabilia": "Memorabilia"
   },
   "product": {
     "grading": "Grading",

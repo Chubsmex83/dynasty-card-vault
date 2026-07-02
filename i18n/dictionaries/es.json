@@ -39,7 +39,6 @@
     "mostValuable": "Más valiosas",
     "breaksTitle": "Breaks en vivo",
     "breaksSubtitle": "Únete a nuestros breaks transmitidos en vivo y asegura tu spot antes de que se agoten.",
-    "categoriesTitle": "Explora por categoría",
     "whyTitle": "Por qué elegir Dynasty Card Vault",
     "faqTitle": "Preguntas frecuentes"
   },
@@ -58,10 +57,7 @@
   "categories": {
     "single": "Cartas Individuales",
     "sealed": "Cajas Selladas",
-    "memorabilia": "Memorabilia",
-    "singleDesc": "Cartas certificadas y en bruto de los jugadores y sets más buscados.",
-    "sealedDesc": "Cajas, blasters y hobby boxes sellados de fábrica, listos para abrir o coleccionar.",
-    "memorabiliaDesc": "Piezas firmadas y autenticadas, jerseys, balones y objetos únicos."
+    "memorabilia": "Memorabilia"
   },
   "product": {
     "grading": "Calificación",
