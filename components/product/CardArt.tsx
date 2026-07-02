@@ -13,6 +13,7 @@ const SPORT_HUE: Record<Sport, number> = {
   ufc: 12, // blood orange
   onepiece: 320, // magenta
   mtg: 280, // arcane purple
+  marvel: 350, // comic crimson
 }
 
 const SPORT_LABEL: Record<Sport, string> = {
@@ -26,6 +27,7 @@ const SPORT_LABEL: Record<Sport, string> = {
   ufc: 'UFC',
   onepiece: 'ONE PIECE',
   mtg: 'MTG',
+  marvel: 'MARVEL',
 }
 
 type Size = 'grid' | 'hero' | 'detail'
@@ -48,10 +50,10 @@ export function CardArt({
   size?: Size
   className?: string
 }) {
-  const hue = SPORT_HUE[product.sport]
+  const hue = product.sport ? SPORT_HUE[product.sport] : 45 // neutral gold for sportless items
   const s = SIZE_STYLE[size]
   const title = product.player ?? product.name
-  const sportLabel = SPORT_LABEL[product.sport]
+  const sportLabel = product.sport ? SPORT_LABEL[product.sport] : product.category.toUpperCase()
 
   const baseGradient = `linear-gradient(155deg,
     hsl(${hue} 45% 16%) 0%,

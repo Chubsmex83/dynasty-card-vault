@@ -12,6 +12,8 @@ Motion · Zustand**, deployed on **Vercel**.
 
 - **Marketplace** (`/shop`) with a filter sidebar (category, sport, grade,
   availability, price, sort) and a prominent live-autocomplete search.
+  Categories are singles, sealed boxes, memorabilia, and accessories; sports
+  span NBA/MLB/NFL/NHL, Pokémon, soccer, F1, UFC, One Piece, MTG, and Marvel.
 - **Product detail** pages with a holographic card-art gallery, grading info, and
   Schema.org Product/Offer structured data.
 - **Live Breaks** section with purchasable per-team/division spots.
@@ -29,7 +31,9 @@ Motion · Zustand**, deployed on **Vercel**.
   (Organization, WebSite + SearchAction, Product, Offer, BreadcrumbList, FAQPage),
   `sitemap.xml`, `robots.txt`, semantic HTML, and concrete FAQ content.
 
-Home sections: Hero → Featured → New Arrivals → Live Breaks → Why Us → FAQ.
+Home sections: Hero → Featured → Sealed Boxes → Live Breaks → Why Us → FAQ.
+The "Sealed Boxes" row shows the first 8 sealed boxes that have real product
+photos (`getSealedBoxes()`), linking through to `/shop?category=sealed`.
 Category browsing lives in the header nav and the `/shop` filters (there is no
 dedicated category-tiles section on the home page).
 
@@ -63,9 +67,15 @@ i18n/                Locale config + es/en dictionaries
 ## Data layer
 
 All catalog reads go through `lib/data/` accessors (`getProducts`, `search`,
-`getBreaks`, …). The catalog in `lib/data/products.ts` is mock data with
-`images: []`, so a generated `<CardArt>` placeholder is rendered. Replace with a
-real API/CMS or populate `images` with real photos — no UI changes required.
+`getSealedBoxes`, `getBreaks`, …). Most of the catalog in `lib/data/products.ts`
+is mock data with `images: []`, so a generated `<CardArt>` placeholder is
+rendered. The sealed boxes and accessory added from real inventory point at
+photos under `public/products/<sport>/…` and render via `next/image`. Populate
+`images` on any other product (or swap in a real API/CMS) to replace the
+placeholder — no UI changes required.
+
+> **Note:** prices on the real sealed-box/accessory entries are placeholders
+> (flagged with a comment in `products.ts`) pending the final price list.
 
 ## Environment
 

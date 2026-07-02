@@ -5,6 +5,7 @@
     "singles": "Singles",
     "sealed": "Sealed Boxes",
     "memorabilia": "Memorabilia",
+    "accessories": "Accessories",
     "breaks": "Live Breaks",
     "shop": "Shop",
     "cart": "Cart",
@@ -36,6 +37,7 @@
     "heroCta": "Shop the vault",
     "featured": "Featured",
     "newArrivals": "New arrivals",
+    "sealedBoxes": "Sealed Boxes",
     "mostValuable": "Most valuable",
     "breaksTitle": "Live Breaks",
     "breaksSubtitle": "Join our live-streamed breaks and lock in your spot before they sell out.",
@@ -52,12 +54,14 @@
     "f1": "Formula 1",
     "ufc": "UFC",
     "onepiece": "One Piece",
-    "mtg": "Magic: The Gathering"
+    "mtg": "Magic: The Gathering",
+    "marvel": "Marvel"
   },
   "categories": {
     "single": "Single Cards",
     "sealed": "Sealed Boxes",
-    "memorabilia": "Memorabilia"
+    "memorabilia": "Memorabilia",
+    "accessories": "Accessories"
   },
   "product": {
     "grading": "Grading",

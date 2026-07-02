@@ -904,4 +904,231 @@ export const products: Product[] = [
     price: 145, currency: 'USD', availability: 'in_stock', images: [],
     description: 'Galarian Gallery alternate art Mewtwo VSTAR from Crown Zenith.',
   },
+
+  // ================================================================
+  // Real sealed-box inventory (real product photos).
+  // NOTE: prices below are PLACEHOLDERS — replace with the final list.
+  // ================================================================
+
+  // ---------------- NFL sealed boxes ----------------
+  {
+    id: 'p-nfl-015', slug: '2024-donruss-optic-football-blaster-box',
+    name: '2024 Panini Donruss Optic Football Blaster Box', category: 'sealed', sport: 'nfl',
+    brand: 'Panini Donruss Optic', year: 2024,
+    price: 40, currency: 'USD', availability: 'in_stock',
+    images: ['/products/nfl/2024-donruss-optic-football-blaster-box.webp'],
+    description: 'Factory sealed 2024 Panini Donruss Optic Football blaster box.',
+  },
+  {
+    id: 'p-nfl-016', slug: '2025-bowman-university-chrome-football-blaster-box',
+    name: '2025 Bowman University Chrome Football Blaster Box', category: 'sealed', sport: 'nfl',
+    brand: 'Bowman University Chrome', year: 2025,
+    price: 45, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-bowman-university-chrome-football-blaster-box.webp'],
+    description: 'Factory sealed 2025 Bowman University Chrome Football blaster box.',
+  },
+  {
+    id: 'p-nfl-017', slug: '2025-donruss-optic-football-blaster-box',
+    name: '2025 Panini Donruss Optic Football Blaster Box', category: 'sealed', sport: 'nfl',
+    brand: 'Panini Donruss Optic', year: 2025,
+    price: 40, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-donruss-optic-football-blaster-box.webp'],
+    description: 'Factory sealed 2025 Panini Donruss Optic Football blaster box.',
+  },
+  {
+    id: 'p-nfl-018', slug: '2025-donruss-optic-football-mega-box',
+    name: '2025 Panini Donruss Optic Football Mega Box', category: 'sealed', sport: 'nfl',
+    brand: 'Panini Donruss Optic', year: 2025,
+    price: 60, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-donruss-optic-football-mega-box.webp'],
+    description: 'Factory sealed 2025 Panini Donruss Optic Football mega box.',
+  },
+  {
+    id: 'p-nfl-019', slug: '2025-topps-chrome-football-hanger-box',
+    name: '2025 Topps Chrome Football Hanger Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Chrome', year: 2025,
+    price: 35, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-topps-chrome-football-hanger-box.webp'],
+    description: 'Factory sealed 2025 Topps Chrome Football hanger box.',
+  },
+  {
+    id: 'p-nfl-020', slug: '2025-topps-chrome-football-hobby-box',
+    name: '2025 Topps Chrome Football Hobby Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Chrome', year: 2025,
+    price: 200, currency: 'USD', availability: 'in_stock', featured: true, newArrival: true,
+    images: ['/products/nfl/2025-topps-chrome-football-hobby-box.webp'],
+    description: 'Factory sealed 2025 Topps Chrome Football hobby box.',
+  },
+  {
+    id: 'p-nfl-021', slug: '2025-topps-chrome-football-jumbo-box',
+    name: '2025 Topps Chrome Football Jumbo Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Chrome', year: 2025,
+    price: 150, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-topps-chrome-football-jumbo-box.webp'],
+    description: 'Factory sealed 2025 Topps Chrome Football jumbo box.',
+  },
+  {
+    id: 'p-nfl-022', slug: '2025-topps-chrome-football-mega-box',
+    name: '2025 Topps Chrome Football Mega Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Chrome', year: 2025,
+    price: 60, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-topps-chrome-football-mega-box.webp'],
+    description: 'Factory sealed 2025 Topps Chrome Football mega box.',
+  },
+  {
+    id: 'p-nfl-023', slug: '2025-topps-chrome-football-value-box',
+    name: '2025 Topps Chrome Football Value Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Chrome', year: 2025,
+    price: 30, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-topps-chrome-football-value-box.webp'],
+    description: 'Factory sealed 2025 Topps Chrome Football value box.',
+  },
+  {
+    id: 'p-nfl-024', slug: '2025-topps-cosmic-chrome-football-hobby-box',
+    name: '2025 Topps Cosmic Chrome Football Hobby Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Cosmic Chrome', year: 2025,
+    price: 220, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-topps-cosmic-chrome-football-hobby-box.webp'],
+    description: 'Factory sealed 2025 Topps Cosmic Chrome Football hobby box.',
+  },
+  {
+    id: 'p-nfl-025', slug: '2025-topps-resurgence-football-mega-box',
+    name: '2025 Topps Resurgence Football Mega Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Resurgence', year: 2025,
+    price: 60, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-topps-resurgence-football-mega-box.webp'],
+    description: 'Factory sealed 2025 Topps Resurgence Football mega box.',
+  },
+  {
+    id: 'p-nfl-026', slug: '2025-topps-resurgence-football-value-box',
+    name: '2025 Topps Resurgence Football Value Box', category: 'sealed', sport: 'nfl',
+    brand: 'Topps Resurgence', year: 2025,
+    price: 30, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nfl/2025-topps-resurgence-football-value-box.webp'],
+    description: 'Factory sealed 2025 Topps Resurgence Football value box.',
+  },
+
+  // ---------------- MLB sealed boxes ----------------
+  {
+    id: 'p-mlb-016', slug: '2026-topps-chrome-baseball-value-box',
+    name: '2026 Topps Chrome Baseball Value Box', category: 'sealed', sport: 'mlb',
+    brand: 'Topps Chrome', year: 2026,
+    price: 30, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/mlb/2026-topps-chrome-baseball-value-box.webp'],
+    description: 'Factory sealed 2026 Topps Chrome Baseball value box.',
+  },
+  {
+    id: 'p-mlb-017', slug: '2026-topps-complete-set-baseball-hobby-box',
+    name: '2026 Topps Complete Set Baseball Hobby Box', category: 'sealed', sport: 'mlb',
+    brand: 'Topps', year: 2026,
+    price: 90, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/mlb/2026-topps-complete-set-baseball-hobby-box.webp'],
+    description: 'Factory sealed 2026 Topps Complete Set Baseball hobby box.',
+  },
+  {
+    id: 'p-mlb-018', slug: '2026-topps-complete-set-baseball-sealed-case',
+    name: '2026 Topps Complete Set Baseball Sealed Case', category: 'sealed', sport: 'mlb',
+    brand: 'Topps', year: 2026,
+    price: 1200, currency: 'USD', availability: 'in_stock', featured: true,
+    images: ['/products/mlb/2026-topps-complete-set-baseball-sealed-case.webp'],
+    description: 'Factory sealed 2026 Topps Complete Set Baseball full case.',
+  },
+  {
+    id: 'p-mlb-019', slug: '2026-topps-series-2-baseball-mega-box',
+    name: '2026 Topps Series 2 Baseball Mega Box', category: 'sealed', sport: 'mlb',
+    brand: 'Topps Series 2', year: 2026,
+    price: 60, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/mlb/2026-topps-series-2-baseball-mega-box.webp'],
+    description: 'Factory sealed 2026 Topps Series 2 Baseball mega box.',
+  },
+  {
+    id: 'p-mlb-020', slug: '2026-topps-series-2-baseball-value-box',
+    name: '2026 Topps Series 2 Baseball Value Box', category: 'sealed', sport: 'mlb',
+    brand: 'Topps Series 2', year: 2026,
+    price: 30, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/mlb/2026-topps-series-2-baseball-value-box.webp'],
+    description: 'Factory sealed 2026 Topps Series 2 Baseball value box.',
+  },
+
+  // ---------------- NBA sealed boxes ----------------
+  {
+    id: 'p-nba-019', slug: '2025-26-hoops-basketball-hanger-box',
+    name: '2025-26 Hoops Basketball Hanger Box', category: 'sealed', sport: 'nba',
+    brand: 'Panini Hoops', year: 2025,
+    price: 35, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nba/2025-26-hoops-basketball-hanger-box.webp'],
+    description: 'Factory sealed 2025-26 Panini Hoops Basketball hanger box.',
+  },
+  {
+    id: 'p-nba-020', slug: '2025-26-hoops-basketball-value-box',
+    name: '2025-26 Hoops Basketball Value Box', category: 'sealed', sport: 'nba',
+    brand: 'Panini Hoops', year: 2025,
+    price: 30, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/nba/2025-26-hoops-basketball-value-box.webp'],
+    description: 'Factory sealed 2025-26 Panini Hoops Basketball value box.',
+  },
+
+  // ---------------- Soccer sealed boxes ----------------
+  {
+    id: 'p-soc-010', slug: '2025-panini-prizm-fifa-world-cup-soccer-mega-box',
+    name: '2025 Panini Prizm FIFA World Cup Soccer Mega Box', category: 'sealed', sport: 'soccer',
+    brand: 'Panini Prizm', year: 2025,
+    price: 60, currency: 'USD', availability: 'in_stock', featured: true, newArrival: true,
+    images: ['/products/soccer/2025-panini-prizm-fifa-world-cup-soccer-mega-box.webp'],
+    description: 'Factory sealed 2025 Panini Prizm FIFA World Cup Soccer mega box.',
+  },
+  {
+    id: 'p-soc-011', slug: '2025-topps-inception-mls-hobby-box',
+    name: '2025 Topps Inception MLS Hobby Box', category: 'sealed', sport: 'soccer',
+    brand: 'Topps Inception', year: 2025,
+    price: 200, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/soccer/2025-topps-inception-mls-hobby-box.webp'],
+    description: 'Factory sealed 2025 Topps Inception MLS hobby box.',
+  },
+
+  // ---------------- UFC sealed boxes ----------------
+  {
+    id: 'p-ufc-008', slug: '2026-topps-chrome-ufc-mega-box',
+    name: '2026 Topps Chrome UFC Mega Box', category: 'sealed', sport: 'ufc',
+    brand: 'Topps Chrome', year: 2026,
+    price: 60, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/ufc/2026-topps-chrome-ufc-mega-box.webp'],
+    description: 'Factory sealed 2026 Topps Chrome UFC mega box.',
+  },
+  {
+    id: 'p-ufc-009', slug: '2026-topps-chrome-ufc-value-box',
+    name: '2026 Topps Chrome UFC Value Box', category: 'sealed', sport: 'ufc',
+    brand: 'Topps Chrome', year: 2026,
+    price: 30, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/ufc/2026-topps-chrome-ufc-value-box.webp'],
+    description: 'Factory sealed 2026 Topps Chrome UFC value box.',
+  },
+
+  // ---------------- Marvel sealed boxes ----------------
+  {
+    id: 'p-mvl-001', slug: '2025-topps-chrome-deadpool-value-box',
+    name: '2025 Topps Chrome Deadpool Value Box', category: 'sealed', sport: 'marvel',
+    brand: 'Topps Chrome', year: 2025,
+    price: 30, currency: 'USD', availability: 'in_stock', featured: true, newArrival: true,
+    images: ['/products/marvel/2025-topps-chrome-deadpool-value-box.webp'],
+    description: 'Factory sealed 2025 Topps Chrome Marvel Deadpool value box.',
+  },
+  {
+    id: 'p-mvl-002', slug: '2026-topps-chrome-marvel-comics-value-box',
+    name: '2026 Topps Chrome Marvel Comics Value Box', category: 'sealed', sport: 'marvel',
+    brand: 'Topps Chrome', year: 2026,
+    price: 30, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/marvel/2026-topps-chrome-marvel-comics-value-box.webp'],
+    description: 'Factory sealed 2026 Topps Chrome Marvel Comics value box.',
+  },
+
+  // ---------------- Accessories ----------------
+  {
+    id: 'p-acc-001', slug: 'fanatics-12-slot-vertical-graded-acrylic-case',
+    name: 'Fanatics Collectibles 12 Slot Vertical Graded Acrylic Case', category: 'accessories',
+    brand: 'Fanatics Collectibles',
+    price: 40, currency: 'USD', availability: 'in_stock', newArrival: true,
+    images: ['/products/accessories/fanatics-12-slot-vertical-graded-acrylic-case.webp'],
+    description: 'Premium 12-slot vertical acrylic display case for graded card slabs, by Fanatics Collectibles.',
+  },
 ]

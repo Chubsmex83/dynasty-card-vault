@@ -62,7 +62,7 @@ export default async function ProductPage({
 
   const dict = await getDictionary(locale)
 
-  const microLabels = [product.brand, product.year, dict.sports[product.sport]]
+  const microLabels = [product.brand, product.year, product.sport ? dict.sports[product.sport] : null]
     .filter(Boolean)
     .join(' · ')
 

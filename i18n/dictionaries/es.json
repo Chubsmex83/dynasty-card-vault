@@ -5,6 +5,7 @@
     "singles": "Individuales",
     "sealed": "Cajas Selladas",
     "memorabilia": "Memorabilia",
+    "accessories": "Accesorios",
     "breaks": "Live Breaks",
     "shop": "Tienda",
     "cart": "Carrito",
@@ -36,6 +37,7 @@
     "heroCta": "Explorar la tienda",
     "featured": "Destacadas",
     "newArrivals": "Recién llegadas",
+    "sealedBoxes": "Cajas Selladas",
     "mostValuable": "Más valiosas",
     "breaksTitle": "Breaks en vivo",
     "breaksSubtitle": "Únete a nuestros breaks transmitidos en vivo y asegura tu spot antes de que se agoten.",
@@ -52,12 +54,14 @@
     "f1": "Fórmula 1",
     "ufc": "UFC",
     "onepiece": "One Piece",
-    "mtg": "Magic: The Gathering"
+    "mtg": "Magic: The Gathering",
+    "marvel": "Marvel"
   },
   "categories": {
     "single": "Cartas Individuales",
     "sealed": "Cajas Selladas",
-    "memorabilia": "Memorabilia"
+    "memorabilia": "Memorabilia",
+    "accessories": "Accesorios"
   },
   "product": {
     "grading": "Calificación",

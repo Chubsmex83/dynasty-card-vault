@@ -20,6 +20,7 @@ export function Footer({
     { href: `/${locale}/shop?category=single`, label: dict.categories.single },
     { href: `/${locale}/shop?category=sealed`, label: dict.categories.sealed },
     { href: `/${locale}/shop?category=memorabilia`, label: dict.categories.memorabilia },
+    { href: `/${locale}/shop?category=accessories`, label: dict.categories.accessories },
   ]
 
   return (

@@ -16,7 +16,7 @@ import { ProductGrid } from '@/components/product/ProductGrid'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { pageMetadata, breadcrumbJsonLd, JsonLd } from '@/lib/seo'
 
-const CATEGORY_VALUES: Category[] = ['single', 'sealed', 'memorabilia']
+const CATEGORY_VALUES: Category[] = ['single', 'sealed', 'memorabilia', 'accessories']
 const SPORT_VALUES: Sport[] = [
   'nba',
   'mlb',

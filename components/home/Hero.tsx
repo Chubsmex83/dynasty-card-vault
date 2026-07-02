@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import {
   motion,
@@ -91,7 +91,13 @@ export function Hero({
   dict: Dictionary
   showcase: Product[]
 }) {
-  const reduced = useReducedMotion() ?? false
+  const prefersReduced = useReducedMotion() ?? false
+  // Server and the first client render must match, so ignore the user's
+  // reduced-motion preference until after mount (avoids a hydration mismatch
+  // for visitors who have "reduce motion" enabled).
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  const reduced = mounted ? prefersReduced : false
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,

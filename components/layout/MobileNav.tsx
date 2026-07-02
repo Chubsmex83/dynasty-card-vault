@@ -51,6 +51,7 @@ export function MobileNav({
     { href: `/${locale}/shop?category=single`, label: dict.nav.singles },
     { href: `/${locale}/shop?category=sealed`, label: dict.nav.sealed },
     { href: `/${locale}/shop?category=memorabilia`, label: dict.nav.memorabilia },
+    { href: `/${locale}/shop?category=accessories`, label: dict.nav.accessories },
     { href: `/${locale}/breaks`, label: dict.nav.breaks },
     { href: `/${locale}/shop`, label: dict.nav.shop },
   ]

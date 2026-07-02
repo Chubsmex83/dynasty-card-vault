@@ -9,7 +9,7 @@ import { Select } from '@/components/ui/Select'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 
-const CATEGORIES: Category[] = ['single', 'sealed', 'memorabilia']
+const CATEGORIES: Category[] = ['single', 'sealed', 'memorabilia', 'accessories']
 const SPORTS: Sport[] = [
   'nba',
   'mlb',
@@ -21,6 +21,7 @@ const SPORTS: Sport[] = [
   'ufc',
   'onepiece',
   'mtg',
+  'marvel',
 ]
 const GRADES = ['PSA', 'BGS', 'SGC'] as const
 const AVAILABILITY: Availability[] = ['in_stock', 'sold_out', 'preorder']

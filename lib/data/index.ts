@@ -49,6 +49,11 @@ export function getNewArrivals(): Product[] {
   return products.filter((p) => p.newArrival === true)
 }
 
+// Sealed boxes that have real product photos (the uploaded inventory).
+export function getSealedBoxes(): Product[] {
+  return products.filter((p) => p.category === 'sealed' && p.images.length > 0)
+}
+
 export function getMostValuable(): Product[] {
   return products
     .slice()

@@ -9,8 +9,9 @@ export type Sport =
   | 'ufc'
   | 'onepiece'
   | 'mtg'
+  | 'marvel'
 
-export type Category = 'single' | 'sealed' | 'memorabilia'
+export type Category = 'single' | 'sealed' | 'memorabilia' | 'accessories'
 
 export type Availability = 'in_stock' | 'sold_out' | 'preorder'
 
@@ -21,7 +22,7 @@ export interface Product {
   slug: string
   name: string
   category: Category
-  sport: Sport
+  sport?: Sport // optional: accessories are not tied to a sport
   player?: string
   team?: string
   league?: string
