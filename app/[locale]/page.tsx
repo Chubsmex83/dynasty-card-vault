@@ -2,12 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { isLocale, type Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/getDictionary'
-import {
-  getFeatured,
-  getNewArrivals,
-  getMostValuable,
-  getBreaks,
-} from '@/lib/data'
+import { getFeatured, getNewArrivals, getBreaks } from '@/lib/data'
 import { pageMetadata } from '@/lib/seo'
 import { Hero } from '@/components/home/Hero'
 import { SectionRow } from '@/components/home/SectionRow'
@@ -48,7 +43,6 @@ export default async function LocaleHomePage({
 
   const featured = getFeatured().slice(0, 8)
   const newArrivals = getNewArrivals().slice(0, 8)
-  const mostValuable = getMostValuable()
   const breaks = getBreaks()
   const showcase = getFeatured().slice(0, 5)
 
@@ -72,13 +66,6 @@ export default async function LocaleHomePage({
       />
 
       <BreaksStrip breaks={breaks} locale={typedLocale} dict={dict} />
-
-      <SectionRow
-        title={dict.home.mostValuable}
-        products={mostValuable}
-        locale={typedLocale}
-        dict={dict}
-      />
 
       <CategoryTiles locale={typedLocale} dict={dict} />
 
