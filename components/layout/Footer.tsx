@@ -32,9 +32,9 @@ export function Footer({
               <Image
                 src="/logo.png"
                 alt="Dynasty Card Vault"
-                width={48}
-                height={48}
-                className="h-12 w-12 shrink-0 rounded-lg object-contain"
+                width={72}
+                height={72}
+                className="h-[72px] w-[72px] shrink-0 rounded-lg object-contain"
               />
               <span className="font-display text-lg font-semibold tracking-tight text-ink">
                 {dict.nav.brand}

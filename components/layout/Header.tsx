@@ -39,10 +39,10 @@ export function Header({
             <Image
               src="/logo.png"
               alt=""
-              width={44}
-              height={44}
+              width={64}
+              height={64}
               priority
-              className="h-9 w-9 shrink-0 rounded-lg object-contain lg:h-11 lg:w-11"
+              className="h-14 w-14 shrink-0 rounded-lg object-contain lg:h-16 lg:w-16"
             />
             <span className="hidden font-display text-base font-semibold tracking-tight text-ink sm:inline lg:text-lg">
               {dict.nav.brand}
