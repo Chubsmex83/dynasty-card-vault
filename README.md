@@ -30,6 +30,8 @@ Motion · Zustand**, deployed on **Vercel**.
   `sitemap.xml`, `robots.txt`, semantic HTML, and concrete FAQ content.
 
 Home sections: Hero → Featured → New Arrivals → Live Breaks → Why Us → FAQ.
+Category browsing lives in the header nav and the `/shop` filters (there is no
+dedicated category-tiles section on the home page).
 
 ## Getting started
 
