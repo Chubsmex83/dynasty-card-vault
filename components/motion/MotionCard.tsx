@@ -41,19 +41,6 @@ export function MotionCard({
 
   const sheenBackground = useMotionTemplate`radial-gradient(60% 60% at ${smoothSheenX}% ${smoothSheenY}%, rgba(61,231,255,0.5), rgba(179,107,255,0.35) 40%, rgba(201,162,75,0.25) 65%, transparent 80%)`
 
-  if (reducedMotion) {
-    return (
-      <div
-        className={cn(
-          'relative rounded-2xl transition-transform duration-300 hover:-translate-y-1',
-          className
-        )}
-      >
-        {children}
-      </div>
-    )
-  }
-
   function handlePointerMove(e: ReactPointerEvent<HTMLDivElement>) {
     const el = ref.current
     if (!el) return
@@ -75,19 +62,23 @@ export function MotionCard({
     sheenOpacity.set(0)
   }
 
+  // NOTE: the DOM structure must be identical on server and client to avoid a
+  // hydration mismatch. useReducedMotion() is false during SSR and the real
+  // value on the client, so we must NOT branch the markup on it — we only gate
+  // the interaction (pointer handlers / hover), keeping the tree constant.
   return (
     <div className={cn('relative', className)} style={{ perspective: 900 }}>
       <motion.div
         ref={ref}
-        onPointerMove={handlePointerMove}
-        onPointerLeave={handlePointerLeave}
+        onPointerMove={reducedMotion ? undefined : handlePointerMove}
+        onPointerLeave={reducedMotion ? undefined : handlePointerLeave}
         className="relative h-full rounded-2xl"
         style={{
           rotateX,
           rotateY,
           transformStyle: 'preserve-3d',
         }}
-        whileHover={{ z: 12 }}
+        whileHover={reducedMotion ? undefined : { z: 12 }}
         transition={{ type: 'spring', ...springConfig }}
       >
         {children}

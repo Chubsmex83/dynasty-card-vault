@@ -5,7 +5,7 @@ export type ButtonVariant = 'primary' | 'gold' | 'ghost'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-tight transition-all duration-200 ' +
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium tracking-tight transition-all duration-200 ' +
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bg ' +
   'disabled:cursor-not-allowed disabled:opacity-50 active:translate-y-px'
 
