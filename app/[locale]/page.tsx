@@ -7,7 +7,6 @@ import { pageMetadata } from '@/lib/seo'
 import { Hero } from '@/components/home/Hero'
 import { SectionRow } from '@/components/home/SectionRow'
 import { BreaksStrip } from '@/components/home/BreaksStrip'
-import { CategoryTiles } from '@/components/home/CategoryTiles'
 import { ValueProps } from '@/components/home/ValueProps'
 import { FaqSection } from '@/components/home/FaqSection'
 
@@ -66,8 +65,6 @@ export default async function LocaleHomePage({
       />
 
       <BreaksStrip breaks={breaks} locale={typedLocale} dict={dict} />
-
-      <CategoryTiles locale={typedLocale} dict={dict} />
 
       <ValueProps dict={dict} />
 
