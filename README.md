@@ -82,4 +82,10 @@ Used for canonical URLs, `sitemap.xml`, and JSON-LD.
 Deployed to Vercel (project `cartas`). The GoDaddy domain
 `dynastycardvault.com` points at Vercel's nameservers
 (`ns1/ns2.vercel-dns.com`); the apex is canonical and `www` 301-redirects to it.
-To deploy: `vercel --prod`.
+
+The GitHub repo is connected to Vercel, so deploys are automatic:
+
+- **Push to `main`** → production deploy (`dynastycardvault.com`).
+- **Push to any other branch / open a PR** → a preview deploy with its own URL.
+
+Manual deploys still work via the CLI: `vercel --prod`.
