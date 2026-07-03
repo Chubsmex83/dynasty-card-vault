@@ -29,3 +29,31 @@ describe('data layer', () => {
     expect(new Set(slugs).size).toBe(slugs.length)
   })
 })
+
+import { getProductById, getSpotById } from '@/lib/data'
+import { products } from '@/lib/data/products'
+import { breaks } from '@/lib/data/breaks'
+
+describe('getProductById', () => {
+  it('encuentra un producto por su id', () => {
+    const sample = products[0]
+    expect(getProductById(sample.id)?.id).toBe(sample.id)
+  })
+  it('devuelve undefined para un id inexistente', () => {
+    expect(getProductById('no-existe')).toBeUndefined()
+  })
+})
+
+describe('getSpotById', () => {
+  it('encuentra un spot con el id compuesto "<breakId>:<spotId>"', () => {
+    const brk = breaks[0]
+    const spot = brk.spots[0]
+    const found = getSpotById(`${brk.id}:${spot.id}`)
+    expect(found?.id).toBe(spot.id)
+    expect(found?.price).toBe(spot.price)
+  })
+  it('devuelve undefined si el break o el spot no existen', () => {
+    expect(getSpotById('b-000:no-existe')).toBeUndefined()
+    expect(getSpotById('sin-dos-puntos')).toBeUndefined()
+  })
+})

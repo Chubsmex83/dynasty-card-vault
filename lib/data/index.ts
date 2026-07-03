@@ -1,6 +1,6 @@
 import { products } from './products'
 import { breaks } from './breaks'
-import type { Product, ProductFilter, Break } from './types'
+import type { Product, ProductFilter, Break, Spot } from './types'
 
 export * from './types'
 
@@ -39,6 +39,17 @@ export function getProducts(filter: ProductFilter = {}): Product[] {
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug)
+}
+
+export function getProductById(id: string): Product | undefined {
+  return products.find((p) => p.id === id)
+}
+
+export function getSpotById(cartId: string): Spot | undefined {
+  const [breakId, spotId] = cartId.split(':')
+  if (!breakId || !spotId) return undefined
+  const brk = breaks.find((b) => b.id === breakId)
+  return brk?.spots.find((s) => s.id === spotId)
 }
 
 export function getFeatured(): Product[] {
