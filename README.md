@@ -79,13 +79,46 @@ placeholder — no UI changes required.
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and set:
+Copy `.env.example` to `.env.local` and set the values.
 
 ```
 NEXT_PUBLIC_SITE_URL=https://dynastycardvault.com
 ```
 
-Used for canonical URLs, `sitemap.xml`, and JSON-LD.
+`NEXT_PUBLIC_SITE_URL` is used for canonical URLs, `sitemap.xml`, and JSON-LD.
+The payment/FX vars (`BANXICO_TOKEN`, `USD_MARGIN`, `STRIPE_*`, `PAYPAL_*`) power
+the in-progress payments work below — see `.env.example` for the full annotated
+list. `.env*` is gitignored (except `.env.example`), so secrets never land in
+the repo.
+
+## Payments & currency — WORK IN PROGRESS
+
+Being built on branch **`feat/payments-phase2-currency`** (not yet merged to
+`main`; production is untouched). Tracked phase-by-phase; full brief in
+`Desktop/cartasnueva.txt`.
+
+**Done so far**
+- **Phase 1** — analysis of cart, pricing, i18n, layout, routing. ✅
+- **Phase 2 (foundation)** — Banxico FIX exchange-rate service
+  (`lib/fx/banxico.ts`, series `SF43718`, 24h cache + fallback), money helpers
+  (`lib/money.ts`: `mxnToUsd`, MXN/USD formatters), `GET /api/fx` health check.
+  Verified against live Banxico data; unit-tested. ✅
+- **Phase 3 (decision)** — gateway stack approved: **Stripe México** (domestic,
+  MXN — cards, Apple/Google Pay, OXXO, Meses Sin Intereses) **+ PayPal** (US /
+  cross-border, USD). Stripe test keys obtained + verified; env scaffolded. ✅
+
+**Pending**
+- Finish Phase 2 display switch: base prices to **MXN** (`priceMXN`), ES shows
+  MXN / EN shows USD via FIX×(1+margin); cart stores the MXN base. **Blocked on
+  the client's final MXN price list** (deferred to the end by choice).
+- Phase 3 implementation (Stripe + PayPal integration) — needs **PayPal sandbox
+  credentials**.
+- Phases 4–7: checkout flow, webhooks/security, legal pages (ES/EN), FAQ update.
+
+> **Currency model:** prices are stored in **MXN** (reference). English store
+> shows USD as `(MXN ÷ Banxico FIX) × (1 + USD_MARGIN)` (margin default 5%,
+> configurable). The FIX refreshes at most once/day with a safe fallback so the
+> USD price is never missing.
 
 ## Deployment
 
