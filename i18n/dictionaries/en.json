@@ -92,6 +92,20 @@
     "remove": "Remove",
     "continueShopping": "Continue shopping"
   },
+  "checkout": {
+    "title": "Checkout",
+    "summary": "Order summary",
+    "payWithCard": "Pay with card",
+    "payWithPaypal": "Pay with PayPal",
+    "empty": "Your cart is empty.",
+    "emptyCta": "Go to shop",
+    "backToCart": "Back to cart",
+    "successTitle": "Payment confirmed!",
+    "successBody": "Thank you for your purchase. You'll receive an email with your order details.",
+    "failedTitle": "Payment not completed",
+    "failedBody": "No charge was made. You can try again from your cart.",
+    "currencyNote": "Prices in English are charged in US dollars (USD)."
+  },
   "why": [
     {
       "title": "Guaranteed authenticity",

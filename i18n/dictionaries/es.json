@@ -92,6 +92,20 @@
     "remove": "Eliminar",
     "continueShopping": "Seguir comprando"
   },
+  "checkout": {
+    "title": "Finalizar compra",
+    "summary": "Resumen del pedido",
+    "payWithCard": "Pagar con tarjeta",
+    "payWithPaypal": "Pagar con PayPal",
+    "empty": "Tu carrito está vacío.",
+    "emptyCta": "Ir a la tienda",
+    "backToCart": "Volver al carrito",
+    "successTitle": "¡Pago confirmado!",
+    "successBody": "Gracias por tu compra. Recibirás un correo con los detalles de tu pedido.",
+    "failedTitle": "El pago no se completó",
+    "failedBody": "No se realizó ningún cargo. Puedes intentarlo de nuevo desde tu carrito.",
+    "currencyNote": "Los precios en español se cobran en pesos mexicanos (MXN)."
+  },
   "why": [
     {
       "title": "Autenticidad garantizada",
