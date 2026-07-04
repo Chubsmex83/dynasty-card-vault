@@ -2,7 +2,7 @@ import 'server-only'
 import Stripe from 'stripe'
 import type { ResolvedCharge } from './resolveCharge'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '')
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '')
 
 /**
  * Create a Stripe Checkout Session (redirect flow) for an MXN charge. Amounts go
