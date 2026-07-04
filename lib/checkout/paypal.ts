@@ -27,6 +27,11 @@ async function accessToken(): Promise<string> {
 export async function createPayPalOrder(
   charge: ResolvedCharge
 ): Promise<{ orderId: string }> {
+  if (charge.currency !== 'USD') {
+    throw new Error(
+      `createPayPalOrder requires a USD charge, got ${charge.currency}`
+    )
+  }
   const token = await accessToken()
   const res = await fetch(`${BASE}/v2/checkout/orders`, {
     method: 'POST',
