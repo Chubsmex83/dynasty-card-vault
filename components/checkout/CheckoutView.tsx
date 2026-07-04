@@ -71,6 +71,10 @@ export function CheckoutView({
   const fmt = (n: number) =>
     quote?.currency === 'USD' ? formatUSD(n) : formatMXN(n)
 
+  if (!quote && !error) {
+    return <div className="mt-8 h-40 animate-pulse rounded-2xl bg-panel" aria-hidden />
+  }
+
   async function payWithStripe() {
     setError(null)
     const res = await fetch('/api/checkout/stripe', {
@@ -133,13 +137,21 @@ export function CheckoutView({
                   return data.orderId
                 }}
                 onApprove={async (data) => {
-                  await fetch('/api/checkout/paypal/capture', {
+                  setError(null)
+                  const res = await fetch('/api/checkout/paypal/capture', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ orderId: data.orderID }),
                   })
-                  router.push(`/${locale}/checkout/success?provider=paypal`)
+                  const result = await res.json()
+                  if (res.ok && result.status === 'COMPLETED') {
+                    router.push(`/${locale}/checkout/success?provider=paypal`)
+                  } else {
+                    setError(result.error ?? 'payment_failed')
+                  }
                 }}
+                onError={() => setError('payment_failed')}
+                onCancel={() => setError(null)}
               />
             </PayPalScriptProvider>
           )}
