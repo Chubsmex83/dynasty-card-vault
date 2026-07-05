@@ -181,3 +181,18 @@ Stripe es el único valor público).
   debe ser exactamente el mostrado (misma función, sin recomputar).
 - **Idempotencia de webhooks**: sin DB no hay estado que corromper en esta
   rebanada, pero al introducir órdenes habrá que manejar entregas duplicadas.
+
+## Deuda conocida — BLOQUEANTE del sub-proyecto de órdenes/fulfillment
+
+Detectado en la revisión final (2026-07-04). Debe resolverse **antes** de que
+exista fulfillment/persistencia de órdenes:
+
+- **Página de éxito de PayPal es falsificable.** `checkout/success` para Stripe
+  recupera la sesión por ID server-side (`payment_status === 'paid'`), pero para
+  PayPal hace `paid = true` sólo por el query param `provider=paypal`. Hoy el
+  impacto es nulo (la captura ya ocurrió server-side antes del redirect, y sólo
+  afecta el carrito del propio visitante; no se crea ninguna orden), pero en
+  cuanto haya fulfillment esto permitiría marcar una orden como pagada sin
+  confirmación. **Arreglo requerido entonces:** pasar el `orderId` de PayPal a la
+  página de éxito y reverificar el estado de la captura por ID server-side
+  (simetría con Stripe).
