@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useCart, cartTotal, type CartItem } from '@/lib/cart/store'
 import { formatPrice } from '@/lib/format'
 import { cn } from '@/lib/utils'
-import { Button, buttonClasses } from '@/components/ui/Button'
+import { buttonClasses } from '@/components/ui/Button'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/getDictionary'
 
@@ -69,18 +69,12 @@ export function CartView({
         <p className="mt-2 font-display text-3xl font-semibold tracking-tight tabular-nums text-ink">
           {formatPrice(total, locale)}
         </p>
-        <Button
-          variant="gold"
-          size="lg"
-          disabled
-          className="mt-6 w-full"
-          aria-disabled
+        <Link
+          href={`/${locale}/checkout`}
+          className={cn(buttonClasses('gold', 'lg'), 'mt-6 w-full')}
         >
           {dict.cart.checkout}
-        </Button>
-        <p className="mt-3 text-center text-xs text-muted">
-          {dict.cart.checkoutSoon}
-        </p>
+        </Link>
         <Link
           href={`/${locale}/shop`}
           className="mt-4 block text-center text-sm text-gold underline-offset-4 transition-colors hover:text-gold-soft hover:underline"
