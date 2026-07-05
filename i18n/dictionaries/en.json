@@ -104,7 +104,14 @@
     "successBody": "Thank you for your purchase. You'll receive an email with your order details.",
     "failedTitle": "Payment not completed",
     "failedBody": "No charge was made. You can try again from your cart.",
-    "currencyNote": "Prices in English are charged in US dollars (USD)."
+    "currencyNote": "Prices in English are charged in US dollars (USD).",
+    "transparencyTitle": "Purchase information",
+    "transparencyPayments": "We accept cards (Visa, Mastercard, American Express), Apple Pay and Google Pay, and PayPal for international payments.",
+    "transparencyShipping": "Shipping includes insurance. Shipping cost: [TODO: shipping cost].",
+    "transparencyDelivery": "Estimated delivery time: [TODO: delivery times].",
+    "transparencyPolicies": "By completing your purchase you accept our",
+    "termsLink": "Terms and Conditions",
+    "salesLink": "Sales and No-Returns Policy"
   },
   "why": [
     {
@@ -148,6 +155,13 @@
     "rights": "All rights reserved.",
     "explore": "Explore",
     "categories": "Categories",
-    "company": "Company"
+    "company": "Company",
+    "legal": "Legal"
+  },
+  "legal": {
+    "lastUpdated": "Last updated",
+    "privacyTitle": "Privacy Notice",
+    "termsTitle": "Terms and Conditions",
+    "salesTitle": "Sales and No-Returns Policy"
   }
 }

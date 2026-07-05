@@ -104,7 +104,14 @@
     "successBody": "Gracias por tu compra. Recibirás un correo con los detalles de tu pedido.",
     "failedTitle": "El pago no se completó",
     "failedBody": "No se realizó ningún cargo. Puedes intentarlo de nuevo desde tu carrito.",
-    "currencyNote": "Los precios en español se cobran en pesos mexicanos (MXN)."
+    "currencyNote": "Los precios en español se cobran en pesos mexicanos (MXN).",
+    "transparencyTitle": "Información de compra",
+    "transparencyPayments": "Aceptamos tarjetas (Visa, Mastercard, American Express), Apple Pay y Google Pay, y PayPal para pagos internacionales.",
+    "transparencyShipping": "Envío con seguro incluido. Costo de envío: [TODO: costo de envío].",
+    "transparencyDelivery": "Tiempo estimado de entrega: [TODO: tiempos de entrega].",
+    "transparencyPolicies": "Al completar tu compra aceptas nuestros",
+    "termsLink": "Términos y Condiciones",
+    "salesLink": "Política de Ventas y No Devoluciones"
   },
   "why": [
     {
@@ -148,6 +155,13 @@
     "rights": "Todos los derechos reservados.",
     "explore": "Explorar",
     "categories": "Categorías",
-    "company": "Empresa"
+    "company": "Empresa",
+    "legal": "Legal"
+  },
+  "legal": {
+    "lastUpdated": "Última actualización",
+    "privacyTitle": "Aviso de Privacidad",
+    "termsTitle": "Términos y Condiciones",
+    "salesTitle": "Política de Ventas y No Devoluciones"
   }
 }
