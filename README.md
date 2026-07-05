@@ -17,8 +17,9 @@ Motion · Zustand**, deployed on **Vercel**.
 - **Product detail** pages with a holographic card-art gallery, grading info, and
   Schema.org Product/Offer structured data.
 - **Live Breaks** section with purchasable per-team/division spots.
-- **Cart** (client-side, persisted to `localStorage`) — checkout is intentionally
-  disabled until a payments backend is connected.
+- **Cart** (client-side, persisted to `localStorage`) with a working **checkout**
+  (ES → Stripe/MXN, EN → PayPal/USD) — verified end-to-end in sandbox; see the
+  payments section below.
 - **Bilingual** Spanish (default) / English via an `[locale]` route segment and
   JSON dictionaries.
 - **Signature design**: dark premium "vault" aesthetic with a cursor-reactive
@@ -103,17 +104,26 @@ Being built on branch **`feat/payments-phase2-currency`** (not yet merged to
   (`lib/fx/banxico.ts`, series `SF43718`, 24h cache + fallback), money helpers
   (`lib/money.ts`: `mxnToUsd`, MXN/USD formatters), `GET /api/fx` health check.
   Verified against live Banxico data; unit-tested. ✅
-- **Phase 3 (decision)** — gateway stack approved: **Stripe México** (domestic,
-  MXN — cards, Apple/Google Pay, OXXO, Meses Sin Intereses) **+ PayPal** (US /
-  cross-border, USD). Stripe test keys obtained + verified; env scaffolded. ✅
+- **Phase 3 (gateways + checkout)** — end-to-end **sandbox checkout** built and
+  verified. `resolveCharge` (`lib/checkout/resolveCharge.ts`) is the single
+  server-side source of truth for amount + currency (the client sends only
+  ids + quantities; prices are re-resolved from the catalog). ES pays in **MXN
+  via Stripe Checkout** (redirect), EN pays in **USD via PayPal** buttons. Routes
+  under `app/api/checkout/*` + a signature-verified `app/api/webhooks/stripe`;
+  pages `app/[locale]/checkout` and `/checkout/success` (server-side confirmation).
+  Both flows completed live against sandbox (Stripe test card + PayPal sandbox
+  buyer). ✅
 
 **Pending**
 - Finish Phase 2 display switch: base prices to **MXN** (`priceMXN`), ES shows
   MXN / EN shows USD via FIX×(1+margin); cart stores the MXN base. **Blocked on
-  the client's final MXN price list** (deferred to the end by choice).
-- Phase 3 implementation (Stripe + PayPal integration) — needs **PayPal sandbox
-  credentials**.
-- Phases 4–7: checkout flow, webhooks/security, legal pages (ES/EN), FAQ update.
+  the client's final MXN price list** (isolated to `resolveCharge` — one swap
+  point).
+- Next sub-project (needs a datastore): **OXXO Pay** (pending payments) +
+  durable order records; this also re-verifies the PayPal capture by id on the
+  success page.
+- Phases 6–7: legal pages (ES/EN) and FAQ update.
+- Go-live: swap sandbox keys for production, set the Stripe webhook secret.
 
 > **Currency model:** prices are stored in **MXN** (reference). English store
 > shows USD as `(MXN ÷ Banxico FIX) × (1 + USD_MARGIN)` (margin default 5%,
