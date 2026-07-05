@@ -50,6 +50,9 @@ export function resolveCharge(
   const currency = locale === 'en' ? 'USD' : 'MXN'
 
   const lineItems: ChargeLineItem[] = items.map((item) => {
+    if (!Number.isInteger(item.qty) || item.qty <= 0) {
+      throw new Error(`Invalid quantity for cart item: ${item.id}`)
+    }
     const { name, mxn } = basePrice(item)
     const unitAmount =
       currency === 'USD' ? mxnToUsd(mxn, fx.fix, fx.margin) : mxn

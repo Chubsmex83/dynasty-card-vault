@@ -46,4 +46,30 @@ describe('resolveCharge', () => {
       resolveCharge([{ id: 'no-existe', kind: 'product', qty: 1 }], 'es', fx)
     ).toThrow(/Unknown cart item/)
   })
+
+  it('lanza si qty es negativa', () => {
+    expect(() =>
+      resolveCharge([{ id: prod.id, kind: 'product', qty: -1 }], 'es', fx)
+    ).toThrow(/Invalid quantity/)
+  })
+
+  it('lanza si qty es cero', () => {
+    expect(() =>
+      resolveCharge([{ id: prod.id, kind: 'product', qty: 0 }], 'es', fx)
+    ).toThrow(/Invalid quantity/)
+  })
+
+  it('lanza si qty no es entero', () => {
+    expect(() =>
+      resolveCharge([{ id: prod.id, kind: 'product', qty: 1.5 }], 'es', fx)
+    ).toThrow(/Invalid quantity/)
+  })
+
+  it('rechaza un carrito mixto con qty negativa que subvalúa el total', () => {
+    const items: CartLine[] = [
+      { id: prod.id, kind: 'product', qty: 1 },
+      { id: `${brk.id}:${spot.id}`, kind: 'spot', qty: -1 },
+    ]
+    expect(() => resolveCharge(items, 'es', fx)).toThrow(/Invalid quantity/)
+  })
 })
