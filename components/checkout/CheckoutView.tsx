@@ -104,6 +104,23 @@ export function CheckoutView({
           ))}
         </ul>
         <p className="mt-3 text-xs text-muted">{dict.checkout.currencyNote}</p>
+        <div className="mt-6 border-t border-white/10 pt-4 text-xs text-muted">
+          <h3 className="font-medium text-ink">{dict.checkout.transparencyTitle}</h3>
+          <p className="mt-2">{dict.checkout.transparencyPayments}</p>
+          <p className="mt-1">{dict.checkout.transparencyShipping}</p>
+          <p className="mt-1">{dict.checkout.transparencyDelivery}</p>
+          <p className="mt-2">
+            {dict.checkout.transparencyPolicies}{' '}
+            <Link href={`/${locale}/legal/terms`} className="text-gold underline-offset-4 hover:underline">
+              {dict.checkout.termsLink}
+            </Link>
+            {' · '}
+            <Link href={`/${locale}/legal/sales`} className="text-gold underline-offset-4 hover:underline">
+              {dict.checkout.salesLink}
+            </Link>
+            .
+          </p>
+        </div>
       </section>
 
       <aside className="h-fit rounded-2xl bg-panel p-6 ring-1 ring-inset ring-[color-mix(in_srgb,var(--gold)_16%,transparent)] lg:sticky lg:top-24">
