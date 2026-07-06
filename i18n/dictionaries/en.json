@@ -146,7 +146,11 @@
     },
     {
       "q": "What payment methods do you accept?",
-      "a": "Checkout is coming soon; for now you can browse the full catalog and save items to your cart."
+      "a": "We accept Visa, Mastercard and American Express cards, plus Apple Pay and Google Pay, through Stripe; and PayPal for international payments. Interest-free months and OXXO will be available subject to availability [TODO: confirm]."
+    },
+    {
+      "q": "Can I return a product?",
+      "a": "All sales are final: we do not accept returns or refunds for a change of mind. If your order arrives damaged, defective or not as described, review our Sales and No-Returns Policy and contact us."
     }
   ],
   "footer": {

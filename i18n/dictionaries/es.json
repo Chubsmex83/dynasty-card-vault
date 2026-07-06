@@ -146,7 +146,11 @@
     },
     {
       "q": "¿Qué métodos de pago aceptan?",
-      "a": "El módulo de pagos estará disponible próximamente; por ahora puedes explorar el catálogo completo y guardar productos en tu carrito."
+      "a": "Aceptamos tarjetas Visa, Mastercard y American Express, además de Apple Pay y Google Pay, mediante Stripe; y PayPal para pagos internacionales. Meses sin intereses y OXXO estarán disponibles según disponibilidad [TODO: confirmar]."
+    },
+    {
+      "q": "¿Puedo devolver un producto?",
+      "a": "Todas las ventas son finales: no aceptamos devoluciones ni reembolsos por cambio de opinión. Si tu pedido llega dañado, defectuoso o distinto a lo anunciado, revisa nuestra Política de Ventas y No Devoluciones y contáctanos."
     }
   ],
   "footer": {
