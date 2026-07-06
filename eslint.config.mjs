@@ -14,6 +14,14 @@ const eslintConfig = [
   {
     ignores: [".next/**", "out/**", "build/**", "next-env.d.ts"],
   },
+  {
+    // Legal content modules are prose: apostrophes and quotation marks are
+    // inherent to the text, so the JSX unescaped-entities rule is noise here.
+    files: ["content/legal/**/*.tsx"],
+    rules: {
+      "react/no-unescaped-entities": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
