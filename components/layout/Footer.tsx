@@ -23,10 +23,16 @@ export function Footer({
     { href: `/${locale}/shop?category=accessories`, label: dict.categories.accessories },
   ]
 
+  const legal = [
+    { href: `/${locale}/legal/privacy`, label: dict.legal.privacyTitle },
+    { href: `/${locale}/legal/terms`, label: dict.legal.termsTitle },
+    { href: `/${locale}/legal/sales`, label: dict.legal.salesTitle },
+  ]
+
   return (
     <footer className="mt-24 border-t border-gold/15 bg-panel/40">
       <div className="mx-auto max-w-[1280px] px-4 py-14 sm:px-6">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand + business paragraph */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
@@ -75,6 +81,25 @@ export function Footer({
             </h2>
             <ul className="mt-4 space-y-2.5">
               {categories.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted transition-colors hover:text-ink"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-gold">
+              {dict.footer.legal}
+            </h2>
+            <ul className="mt-4 space-y-2.5">
+              {legal.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
