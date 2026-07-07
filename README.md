@@ -113,6 +113,16 @@ Being built on branch **`feat/payments-phase2-currency`** (not yet merged to
   pages `app/[locale]/checkout` and `/checkout/success` (server-side confirmation).
   Both flows completed live against sandbox (Stripe test card + PayPal sandbox
   buyer). ✅
+- **Phase 6 (legal pages)** — three bilingual pages at
+  `app/[locale]/legal/{privacy,terms,sales}` (Privacy Notice, Terms &
+  Conditions with a Live Breaks section, Sales & No-Returns Policy), built from
+  a shared `LegalLayout` around per-locale content modules
+  (`content/legal/<doc>.<locale>.tsx`), linked from a footer "Legal" column, plus
+  a PROFECO purchase-transparency note on checkout. **The legal texts are
+  lawyer-review templates** with a mandatory code-comment header and visible
+  `[TODO]` placeholders for real business data — not for publishing as-is. ✅
+- **Phase 7 (FAQ)** — payment-methods answer updated to the real gateways and a
+  returns question added. ✅
 
 **Pending**
 - Finish Phase 2 display switch: base prices to **MXN** (`priceMXN`), ES shows
@@ -122,7 +132,8 @@ Being built on branch **`feat/payments-phase2-currency`** (not yet merged to
 - Next sub-project (needs a datastore): **OXXO Pay** (pending payments) +
   durable order records; this also re-verifies the PayPal capture by id on the
   success page.
-- Phases 6–7: legal pages (ES/EN) and FAQ update.
+- Before publishing the legal pages: lawyer review + fill every `[TODO]` with
+  the real fiscal/contact data.
 - Go-live: swap sandbox keys for production, set the Stripe webhook secret.
 
 > **Currency model:** prices are stored in **MXN** (reference). English store
