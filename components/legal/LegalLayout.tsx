@@ -20,7 +20,7 @@ export function LegalLayout({
         {title}
       </h1>
       <p className="mt-3 text-sm text-muted">
-        {lastUpdatedLabel}: [TODO: fecha de publicación]
+        {lastUpdatedLabel}: [TODO]
       </p>
       <div
         className="mt-10 text-sm leading-relaxed text-muted [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-ink [&_h3]:mt-6 [&_h3]:font-medium [&_h3]:text-ink [&_p]:mt-4 [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_a]:text-gold [&_a]:underline-offset-4 hover:[&_a]:underline"
